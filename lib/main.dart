@@ -4,6 +4,7 @@ import 'package:ge_reward_app/screens/authentication/loginscreen.dart';
 import 'package:ge_reward_app/screens/authentication/signupScreen.dart';
 import 'package:ge_reward_app/screens/userscreens/onbordingscreen.dart';
 import 'package:ge_reward_app/screens/userscreens/userHomeScreen.dart';
+import 'package:ge_reward_app/screens/userscreens/wheelScreen.dart';
 
 
 
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 234, 217, 66)),
         useMaterial3: true,
       ),
-      home:  UserHomeScreen()
+      home:  spinWheelScreen()
     );
   }
 }

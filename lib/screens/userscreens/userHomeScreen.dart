@@ -1,6 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:ge_reward_app/core/colors.dart';
+import 'package:ge_reward_app/screens/userscreens/widgets/carcardWidget.dart';
 
 class UserHomeScreen extends StatelessWidget {
   const UserHomeScreen({super.key});
@@ -39,7 +41,7 @@ class UserHomeScreen extends StatelessWidget {
                 ),
                 Spacer(),
                 Padding(
-                  padding: const EdgeInsets.only(right: 20),
+                  padding: const EdgeInsets.only(right: 10),
                   child: IconButton(
                       onPressed: () {},
                       icon: Icon(
@@ -95,14 +97,67 @@ class UserHomeScreen extends StatelessWidget {
               ),
             ],
           ),
-          SizedBox(height: 10,),
+          SizedBox(
+            height: 10,
+          ),
           SizedBox(
             height: 50,
             child: Padding(
               padding: const EdgeInsets.all(10),
               child: carListWidget(),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, top: 10),
+            child: Row(
+              children: [
+                Text(
+                  'Recent',
+                  style: TextStyle(color: gWhiteColor, fontSize: 20),
+                ),
+                Spacer(),
+                Text(
+                  'See All',
+                  style: TextStyle(color: primaryColor),
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                VehicleCardWidget(
+                    make: "LAMBORGINI",
+                    model: "HURACAN EVO",
+                    invoice: 12000,
+                    plateNo: "D276",
+                    image: "lib/assets/images/lambo.png"),
+                VehicleCardWidget(
+                    make: "FERRARI",
+                    model: "458 Italia",
+                    invoice: 8000,
+                    plateNo: "D6766",
+                    image: "lib/assets/images/ferrari.png"),
+               /*  VehicleCardWidget(
+                    make: "FERRARI",
+                    model: "458 Italia",
+                    invoice: 8000,
+                    plateNo: "D6766",
+                    image: "lib/assets/images/ferrari.png"),
+                VehicleCardWidget(
+                    make: "FERRARI",
+                    model: "458 Italia",
+                    invoice: 8000,
+                    plateNo: "D6766",
+                    image: "lib/assets/images/ferrari.png"), */
+              ],
+            ),
+          ),
+          
         ],
       ),
     );
@@ -116,70 +171,92 @@ class carListWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      scrollDirection: Axis.horizontal,
-      children: [
-        Container(
-          child: Center(child: Text('Ferrari',style: TextStyle(color: gBlackColor),)),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            color:primaryColor.withOpacity(.7),
-          ),
-          height: 25,
-          width: 100,
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Container(
-           child: Center(child: Text('Ferrari',style: TextStyle(color: gWhiteColor),)),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            color: gHomeGrey1,
-          ),
-          height: 20,
-          width: 100,
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Container(
-           child: Center(child: Text('Ferrari',style: TextStyle(color: gWhiteColor),)),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            color:gHomeGrey1,
-          ),
-          height: 20,
-          width: 100,
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Container( 
-           child: Center(child: Text('Ferrari',style: TextStyle(color: gWhiteColor),)),
-          height: 20,
-          width: 100,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            color:gHomeGrey1,
-          ),
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Container(
-           child: Center(child: Text('Ferrari',style: TextStyle(color: gWhiteColor),)),
+    return Padding(
+      padding: const EdgeInsets.only(left: 10),
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: [
+          Container(
+            child: Center(
+                child: Text(
+              'All',
+              style: TextStyle(color: gBlackColor),
+            )),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              color:gHomeGrey1,
+              color: primaryColor.withOpacity(.7),
+            ),
+            height: 25,
+            width: 100,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            child: Center(
+                child: Text(
+              'Ferrari',
+              style: TextStyle(color: gWhiteColor),
+            )),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              color: gHomeGrey1,
             ),
             height: 20,
-            width: 100),
-        SizedBox(
-          width: 10,
-        ),
-      
-      ],
+            width: 100,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            child: Center(
+                child: Text(
+              'BMW',
+              style: TextStyle(color: gWhiteColor),
+            )),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              color: gHomeGrey1,
+            ),
+            height: 20,
+            width: 100,
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            child: Center(
+                child: Text(
+              'Ferrari',
+              style: TextStyle(color: gWhiteColor),
+            )),
+            height: 20,
+            width: 100,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              color: gHomeGrey1,
+            ),
+          ),
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+              child: Center(
+                  child: Text(
+                'Ferrari',
+                style: TextStyle(color: gWhiteColor),
+              )),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                color: gHomeGrey1,
+              ),
+              height: 20,
+              width: 100),
+          SizedBox(
+            width: 10,
+          ),
+        ],
+      ),
     );
   }
 }
